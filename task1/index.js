@@ -6,6 +6,8 @@ const NPORT=process.env.PORT?process.env.PORT:3000
 
 app.get('/api/',(req,res)=>{
     let date=new Date()
+    date.setMilliseconds(0)
+    let dateString = date.toISOString().replace(".000Z", "Z");
     const weekday = [
       "Sunday",
       "Monday",
@@ -22,7 +24,7 @@ app.get('/api/',(req,res)=>{
       slack_name,
       track,
       current_day: weekday[date.getUTCDay()],
-      utc_time: date,
+      utc_time: dateString,
       status: 200,
       github_repo_url: "https://github.com/Neon-jeff/hngx_tasks",
       github_file_url:
