@@ -18,13 +18,16 @@ app.get('/',(req,res)=>{
 
     const slack_name=req.query.slack_name
     const track=req.query.track
-    const obj={
-        slack_name,
-        track,
-        current_day:weekday[date.getUTCDay()],
-        utc_time:date,
-        status:200
-    }
+    const obj = {
+      slack_name,
+      track,
+      current_day: weekday[date.getUTCDay()],
+      utc_time: date,
+      status: 200,
+      github_repo_url: "https://github.com/Neon-jeff/hngx_tasks",
+      github_file_url:
+        "https://github.com/Neon-jeff/hngx_tasks/blob/main/task1/index.js",
+    };
     res.status(200).json(obj)
 })
 
