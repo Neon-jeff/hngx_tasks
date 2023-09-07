@@ -4,7 +4,7 @@ const app=express()
 
 const NPORT=process.env.PORT?process.env.PORT:3000
 
-app.get('/',(req,res)=>{
+app.get('/api/',(req,res)=>{
     let date=new Date()
     const weekday = [
       "Sunday",
